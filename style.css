@@ -39,4 +39,20 @@
     color:var(--white);
     font-size: 1.75rem;
 }
+.header_wrapper li{
+    transition: .5s;
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -ms-transition: .5s;
+    -o-transition: .5s;
+}
+
+.header_wrapper li:hover{
+    background-color: var(--primary_color);
+}
+
+/*----- category -----*/
+.category_wrapper li:hover a{
+    color: var(--primary_color);
+}
 
