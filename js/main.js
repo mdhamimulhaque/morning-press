@@ -44,9 +44,16 @@ const newsRow = document.getElementById('news_row');
 
 const singleCategoryDataShow = (SingleCategoryAllData) => {
     newsRow.innerHTML = '';
+    // ---> post count show
     document.querySelector('.post_count').innerText = `${SingleCategoryAllData.length}`;
+    if (SingleCategoryAllData.length === 0) {
+        newsRow.innerHTML = `
+        <h2>No News Available</h2>
+        `;
+    }
     // ---> category 
     SingleCategoryAllData.forEach(category => {
+
         const newsItemColumn = document.createElement('div');
         newsItemColumn.classList.add('col-md-6', 'col-lg-6', 'col-xl-4');
         newsItemColumn.innerHTML = `
@@ -88,7 +95,6 @@ const singleCategoryDataShow = (SingleCategoryAllData) => {
 
 //! ==========  category details data load ==========
 const categoryDetailsDataLoad = async (newsId) => {
-    // console.log(newsId)
     const res = await fetch(`https://openapi.programming-hero.com/api/news/${newsId}`)
     const data = await res.json()
     categoryDetailsDataShow(data.data)
@@ -98,7 +104,6 @@ const categoryDetailsDataLoad = async (newsId) => {
 //* ==========  category details data load ==========
 const modalBody = document.getElementById('modal_body');
 const categoryDetailsDataShow = (categoryInfo) => {
-    console.log(categoryInfo)
     document.querySelector('.modal-title').innerText = '';
     modalBody.innerHTML = `
         <div class="card">          
@@ -131,12 +136,6 @@ const categoryDetailsDataShow = (categoryInfo) => {
     `;
 
 }
-
-
-
-
-
-
 
 
 
