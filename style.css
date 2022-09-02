@@ -57,6 +57,7 @@
 }
 
 
+
 /** 
 * ? ===============  Main body area start =============== 
 * ?======================================================
@@ -88,7 +89,7 @@
 }
 
 /* ----- news area ----- */
-.author_info_box .author_img img{
+ .author_img img{
     height: 40px;
     width: 40px;
     border-radius: 50%;
