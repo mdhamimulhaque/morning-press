@@ -56,3 +56,29 @@
     color: var(--primary_color);
 }
 
+
+/** 
+* ? ===============  Main body area start =============== 
+* ?======================================================
+*/
+
+/* ------ post counter area----- */
+.post_count_area p{
+    background-color: var(--primary_color);
+    color:#fff;
+    margin-top: 30px;
+    padding: 10px 20px;
+    font-size: 1.125rem;
+    display:inline-block;
+}
+.post_count_area p:hover{
+    background-color: var(--primary_color);
+    border: none;
+    color: var(--white);
+}
+.post_count{
+    background-color: var(--white);
+    color: var(--pink);
+}
+
+
