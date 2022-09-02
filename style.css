@@ -26,3 +26,17 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
+
+
+/** 
+* ? ===============  header =============== 
+*/
+.header_wrapper{
+    background-image: linear-gradient(20deg, var(--primary_color) 0%, var(--pink) 100%);
+}
+
+.header_wrapper .navbar-brand{
+    color:var(--white);
+    font-size: 1.75rem;
+}
+
