@@ -52,7 +52,7 @@
 }
 
 /*----- category -----*/
-.category_wrapper li:hover a{
+.hover_text:hover{
     color: var(--primary_color);
 }
 
