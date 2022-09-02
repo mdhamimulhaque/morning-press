@@ -44,7 +44,7 @@ const newsRow = document.getElementById('news_row');
 
 const singleCategoryDataShow = (SingleCategoryAllData) => {
     newsRow.innerHTML = '';
-    console.log(SingleCategoryAllData.length)
+    document.querySelector('.post_count').innerText = `${SingleCategoryAllData.length}`;
     // ---> category 
     SingleCategoryAllData.forEach(category => {
         const newsItemColumn = document.createElement('div');
