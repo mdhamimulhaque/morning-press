@@ -50,7 +50,7 @@ const singleCategoryDataShow = (SingleCategoryAllData) => {
         const newsItemColumn = document.createElement('div');
         newsItemColumn.classList.add('col-md-6', 'col-lg-6', 'col-xl-4');
         newsItemColumn.innerHTML = `
-        <div class="news_box mb-4">
+        <div class="news_box mb-4" data-bs-toggle="modal" data-bs-target="#newsdetails" onclick="categoryDetailsDataLoad('${category._id}')">
             <div class="card">
                 <img src="${category?.image_url}" class="card-img-top" alt="image">
                 <div class="card-body">
@@ -73,7 +73,7 @@ const singleCategoryDataShow = (SingleCategoryAllData) => {
 
                         <div class="total_view">
                             <i class="fa-regular fa-eye me-1"></i>
-                            <span>${category?.total_view}</span>
+                            <span>${category?.total_view ? category?.total_view : "No view yet"}</span>
                         </div>
                     </div>
                 </div>
@@ -82,15 +82,26 @@ const singleCategoryDataShow = (SingleCategoryAllData) => {
         `;
         newsRow.appendChild(newsItemColumn);
 
-        // console.log(category)
-        // console.log(category._id)
-        // console.log(category.image_url)
-        // console.log(category.title)
-        // console.log(category.details)
-        // console.log(category.total_view)
-        // console.log(category.author.img)
-        // console.log(category.author.name)
-        // console.log(category.author.published_date)
-
     })
 }
+
+
+//! ==========  category details data load ==========
+
+const categoryDetailsDataLoad = async (newsId) => {
+    // console.log(newsId)
+    const res = await fetch(`https://openapi.programming-hero.com/api/news/${newsId}`)
+    const data = await res.json()
+    console.log(data.data)
+}
+
+
+
+
+
+
+
+
+
+
+// singleCategoryDataLoad(8)
