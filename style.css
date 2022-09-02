@@ -66,10 +66,16 @@
 .post_count_area p{
     background-color: var(--primary_color);
     color:#fff;
-    margin-top: 30px;
+    margin-top: 1.875rem;
+    margin-bottom: 1.875rem;
     padding: 10px 20px;
     font-size: 1.125rem;
     display:inline-block;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
 }
 .post_count_area p:hover{
     background-color: var(--primary_color);
@@ -79,6 +85,26 @@
 .post_count{
     background-color: var(--white);
     color: var(--pink);
+}
+
+/* ----- news area ----- */
+.author_info_box .author_img img{
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border: 2px solid var(--primary_color);
+}
+
+.author_published_date,.author_name{
+    font-size: 0.875rem;
+}
+
+#name{
+    color: var(--primary_color);
 }
 
 
