@@ -29,6 +29,8 @@ const showCategories = (categories) => {
 
 //! ========== single category's data load ==========
 const singleCategoryDataLoad = async (id) => {
+    // --->loader spinner on
+    spinnerFunctionality(true)
     try {
         const res = await fetch(`https://openapi.programming-hero.com/api/news/category/0${id}`)
         const data = await res.json()
@@ -169,4 +171,4 @@ const spinnerFunctionality = (isLoading) => {
 }
 
 
-// singleCategoryDataLoad(8)
+singleCategoryDataLoad(8)

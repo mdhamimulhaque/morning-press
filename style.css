@@ -160,4 +160,12 @@
 }
 
 
+/**
+*! ========== footer =======
+ */
+ footer{
+    background-color: var(--secondary_color);
+    color: var(--primary_color);
+ }
+
 
