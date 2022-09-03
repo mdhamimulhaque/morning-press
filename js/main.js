@@ -55,6 +55,9 @@ const singleCategoryDataShow = (SingleCategoryAllData) => {
         <h2>No News Available</h2>
         `;
     }
+    // ---> data sort
+    SingleCategoryAllData.sort((a, b) => b.total_view - a.total_view)
+
     // ---> category 
     SingleCategoryAllData.forEach(category => {
         // ---> description slice
