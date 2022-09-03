@@ -77,7 +77,7 @@ const singleCategoryDataShow = (SingleCategoryAllData) => {
                 <img src="${category?.image_url ? category?.image_url : "No Image Found"}" class="card-img-top" alt="image">
                 <div class="card-body">
                     <h5 class="card-title post_title">${category?.title.slice(0, 60)}...</h5>
-                    <p class="card-text">${description}...</p>
+                    <p class="card-text">${description ? description + '...' : category.details}</p>
 
                     <div class="author_info_box d-flex align-items-center justify-content-between">
                         <div class="author_info_wrapper d-flex align-items-center">
@@ -125,7 +125,7 @@ const categoryDetailsDataShow = (categoryInfo) => {
     const descriptionCategoryInfoLength = categoryInfo[0]?.details.length;
     let descriptionCategoryInfo;
     if (descriptionCategoryInfoLength > 50) {
-        descriptionCategoryInfo = categoryInfo[0]?.details.slice(0, 400)
+        descriptionCategoryInfo = categoryInfo[0]?.details.slice(0, 200)
     }
     modalBody.innerHTML = `
         <div class="card">          
@@ -151,7 +151,7 @@ const categoryDetailsDataShow = (categoryInfo) => {
 
           </div>
             <h5 class="card-title post_title">${categoryInfo[0]?.title.slice(0, 60)}...</h5>
-            <p class="card-text">${descriptionCategoryInfo}...</p>            
+            <p class="card-text">${descriptionCategoryInfo ? descriptionCategoryInfo + "..." : categoryInfo[0]?.details}</p>            
             </div>
             <img src="${categoryInfo[0]?.image_url ? categoryInfo[0]?.image_url : "No Image Found"}" class="card-img-bottom" alt="image">
         </div>
