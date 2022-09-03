@@ -121,6 +121,23 @@
     color: var(--primary_color);
 }
 
+/**
+ *! ============ spinner ==========
+ */
+ .spinner_wrapper{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #23282daa;
+ }
+.spinner_wrapper .spiner{
+    color: var(--primary_color);
+}
 
 
 

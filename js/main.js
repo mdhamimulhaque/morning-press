@@ -36,6 +36,8 @@ const singleCategoryDataLoad = async (id) => {
     } catch (err) {
         console.log(err)
     }
+
+
 }
 
 
@@ -43,6 +45,8 @@ const singleCategoryDataLoad = async (id) => {
 const newsRow = document.getElementById('news_row');
 
 const singleCategoryDataShow = (SingleCategoryAllData) => {
+    // --->loader spinner on
+    spinnerFunctionality(true)
     newsRow.innerHTML = '';
     // ---> post count show
     document.querySelector('.post_count').innerText = `${SingleCategoryAllData.length}`;
@@ -94,8 +98,9 @@ const singleCategoryDataShow = (SingleCategoryAllData) => {
         </div>
         `;
         newsRow.appendChild(newsItemColumn);
-
     })
+    // ---> loader spinner off
+    spinnerFunctionality(false)
 }
 
 
@@ -117,7 +122,6 @@ const categoryDetailsDataShow = (categoryInfo) => {
     if (descriptionCategoryInfoLength > 50) {
         descriptionCategoryInfo = categoryInfo[0]?.details.slice(0, 400)
     }
-    console.log(descriptionCategoryInfo)
     modalBody.innerHTML = `
         <div class="card">          
             <div class="card-body">
@@ -151,5 +155,15 @@ const categoryDetailsDataShow = (categoryInfo) => {
 }
 
 
+// ! ============ loading spinner ===========
+const spinnerFunctionality = (isLoading) => {
+    const spinnerWrapper = document.querySelector('.spinner_wrapper');
+    if (isLoading === true) {
+        spinnerWrapper.classList.remove('d-none')
+    } else {
+        spinnerWrapper.classList.add('d-none')
+    }
+}
 
-singleCategoryDataLoad(8)
+
+// singleCategoryDataLoad(8)
