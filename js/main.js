@@ -53,7 +53,14 @@ const singleCategoryDataShow = (SingleCategoryAllData) => {
     }
     // ---> category 
     SingleCategoryAllData.forEach(category => {
+        // ---> description slice
+        const descriptionLength = category.details.length;
+        let description;
+        if (descriptionLength > 50) {
+            description = category?.details.slice(0, 150)
+        }
 
+        console.log(description)
         const newsItemColumn = document.createElement('div');
         newsItemColumn.classList.add('col-md-6', 'col-lg-6', 'col-xl-4');
         newsItemColumn.innerHTML = `
@@ -62,7 +69,7 @@ const singleCategoryDataShow = (SingleCategoryAllData) => {
                 <img src="${category?.image_url ? category?.image_url : "No Image Found"}" class="card-img-top" alt="image">
                 <div class="card-body">
                     <h5 class="card-title post_title">${category?.title.slice(0, 60)}...</h5>
-                    <p class="card-text">${category?.details.slice(0, 200)}...</p>
+                    <p class="card-text">${description}...</p>
 
                     <div class="author_info_box d-flex align-items-center justify-content-between">
                         <div class="author_info_wrapper d-flex align-items-center">
