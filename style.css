@@ -140,4 +140,22 @@
 }
 
 
+/**
+*! =============== blog page ==================
+*?=============================================
+*!=============================================
+*/
+
+.blog{
+    background-color: var(--primary_color);
+}
+
+.blog_wrapper .card{
+    padding: 20px;
+    background-color: var(--pink);
+    color: var(--white);
+    /* min-height: 250px; */
+}
+
+
 
